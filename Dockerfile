@@ -27,8 +27,7 @@ FROM base AS dependencies
 # install ALL node_modules, including 'devDependencies'
 #RUN apt-get update && apt-get install -y curl 
 #RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
-RUN apt-get update 
-Run npm install
+RUN apt-get update -y &&  install npm nodejs
  
 #
 # ---- Test ----
