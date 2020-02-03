@@ -12,7 +12,7 @@
 
 FROM alpine:latest AS base
 RUN apk add --no-cache nodejs-current tini
-WORKDIR client
+WORKDIR /root/chat
 #ENTRYPOINT ["/sbin/tini", "---"]
 COPY package.json .
 
@@ -21,13 +21,14 @@ COPY package.json .
 FROM base AS dependencies
 # install node packages
 #RUN npm set progress=false && npm config set depth 0
-#RUN npm install --only=client
+WORKDIR /client
+RUN npm install --only=client
 # copy production node_modules aside
 #RUN cp -R node_modules prod_node_modules
 # install ALL node_modules, including 'devDependencies'
 #RUN apt-get update && apt-get install -y curl 
 #RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
-RUN apt-get update -y &&  install npm nodejs
+
  
 #
 # ---- Test ----
