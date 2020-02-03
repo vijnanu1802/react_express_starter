@@ -1,6 +1,6 @@
 #
 #---Base Node---
-FROM apline:3.5
+FROM alpine:latest
 
 RUN apk add --no-cahe nodejs npm
 
