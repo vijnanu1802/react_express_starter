@@ -21,7 +21,7 @@ COPY package.json .
 FROM base AS dependencies
 # install node packages
 #RUN npm set progress=false && npm config set depth 0
-RUN npm install --only=dev
+RUN npm install --only=client
 # copy production node_modules aside
 RUN cp -R node_modules prod_node_modules
 # install ALL node_modules, including 'devDependencies'
