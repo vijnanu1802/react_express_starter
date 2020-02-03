@@ -9,7 +9,10 @@ WORKDIR /app
 COPY . /app
 
 RUN npm install
+
+EXPOSE 5000
+
 ENTRYPOINT ["node"]
-EXPOSE : 5000
+
 CMD ["server.js"]
 
