@@ -13,5 +13,5 @@
 FROM alpine:latest
 RUN apk add --no-cache nodejs-current tini
 WORKDIR /root/chat
-ENTRYPOINT ["/sbin/tini", "---"]
+#ENTRYPOINT ["/sbin/tini", "---"]
 COPY package.json .
