@@ -23,7 +23,7 @@ FROM base AS dependencies
 #RUN npm set progress=false && npm config set depth 0
 #RUN npm install --only=client
 # copy production node_modules aside
-RUN cp -R node_modules prod_node_modules
+#RUN cp -R node_modules prod_node_modules
 # install ALL node_modules, including 'devDependencies'
 RUN npm install
  
