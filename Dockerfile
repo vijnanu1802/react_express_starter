@@ -11,7 +11,7 @@
 ##----Basenode --
 
 FROM alpine:latest
-RUN apk --no-cache nodejs-current tini
+RUN apk add --no-cache nodejs-current tini
 WORKDIR /root/chat
 ENTRYPOINT ["/sbin/tini", "---"]
 COPY package.json .
