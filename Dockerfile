@@ -22,7 +22,6 @@ COPY package.json ./
 COPY server.js ./
 #COPY client/ ./
 RUN ls -ltra
-RUN git version
 RUN mkdir client
 COPY client/package.json ./client/
 COPY server.js ./client/
