@@ -32,7 +32,7 @@ RUN npm run dev
 RUN npm run server
 
  
-EXPOSE 5000
+EXPOSE 5111
 ENTRYPOINT ["node", "npm start"]
 #RUN npm run client
 CMD ["server.js"]
