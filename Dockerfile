@@ -1,22 +1,23 @@
 #
 #---Base Node---
-#FROM alpine:latest
-#RUN apk add --no-cache nodejs npm
-#WORKDIR /app
-#COPY . /app
-#RUN npm install
-#EXPOSE 5000
-#ENTRYPOINT ["node"]
-#CMD ["server.js"]
+FROM alpine:latest
+RUN apk add --no-cache nodejs npm
+RUN mkdir client && cd client
+WORKDIR /app
+COPY . /app
+RUN npm install
+EXPOSE 5000
+ENTRYPOINT ["node"]
+CMD ["server.js"]
 ##----Basenode --
 
-FROM alpine:latest AS base
-RUN apk add --no-cache nodejs-current tini
-RUN mkdir client && cd client 
-RUN apt-get install npm 
+#FROM alpine:latest AS base
+#RUN apk add --no-cache nodejs-current tini
+#RUN mkdir client && cd client 
+#RUN apt-get install npm 
 
 #ENTRYPOINT ["node server.js", "---"]
-COPY server.js .
+#COPY server.js .
     
 
 # ---- Dependencies ----
