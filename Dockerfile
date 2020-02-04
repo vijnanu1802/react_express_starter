@@ -2,8 +2,8 @@
 #---Base Node---
 FROM alpine:latest
 RUN apk add --no-cache nodejs npm
-RUN mkdir /home/vijnan
-WORKDIR /home/vijnan
+#RUN mkdir /home/vijnan
+#WORKDIR /home/vijnan
 
 #COPY package.json /client/
 #COPY * /client/
