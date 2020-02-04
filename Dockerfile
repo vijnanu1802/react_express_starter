@@ -17,7 +17,8 @@ WORKDIR /home/vijnan
 RUN pwd
 RUN ls -ltr ./
 #RUN ls -ltr /var/lib/jenkins/workspace/docker-node
-RUN cp package.json ./
+RUN echo $WORKDIR
+RUN cp package.json $WORKDIR/
 RUN npm run dev
 RUN npm run server
 
