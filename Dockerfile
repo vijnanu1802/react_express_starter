@@ -9,10 +9,11 @@ RUN npm install
 #RUN npm run client-install
 #RUN npm run dev
 #RUN npm run server
-RUN npm run client
+
  
 EXPOSE 5000
 ENTRYPOINT ["node", "npm start"]
+RUN npm run client
 CMD ["server.js"]
 ##----Basenode --
 
