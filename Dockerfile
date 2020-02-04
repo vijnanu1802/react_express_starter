@@ -23,7 +23,7 @@ COPY server.js ./
 #COPY client/ ./
 RUN ls -ltra
 RUN mkdir client
-COPY client/package.json ./client/
+#COPY client/package.json ./client/
 COPY server.js ./client/
 COPY client ./client
 RUN ls -ltr client
