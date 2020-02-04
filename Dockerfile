@@ -10,9 +10,8 @@
 #CMD ["server.js"]
 ##----Basenode --
 
-#FROM alpine:latest AS base
-FROM reactexpress:1.0.0 AS base
-#RUN apk add --no-cache nodejs-current tini
+FROM alpine:latest AS base
+RUN apk add --no-cache nodejs-current tini
 RUN mkdir client && cd client 
 RUN npm install
 
