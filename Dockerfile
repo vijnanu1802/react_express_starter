@@ -6,9 +6,9 @@ RUN mkdir client
 WORKDIR client
 COPY package.json .
 RUN npm install
-RUN npm run client-install
-#RUN npm run dev
-#RUN npm run server
+#RUN npm run client-install
+RUN npm run dev
+RUN npm run server
 
  
 EXPOSE 5000
