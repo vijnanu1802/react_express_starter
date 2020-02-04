@@ -18,7 +18,7 @@ RUN ls -ltr ./
 #RUN ls -ltr /var/lib/jenkins/workspace/docker-node
 #RUN echo $WORKDIR
 #RUN cp package.json $WORKDIR/
-COPY client/package.json ./
+COPY package.json ./
 COPY server.js ./
 #COPY client/ ./
 RUN ls -ltra
