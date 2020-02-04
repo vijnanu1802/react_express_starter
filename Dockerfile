@@ -8,18 +8,11 @@ COPY . /app
 RUN npm install 
  
 EXPOSE 5000
-ENTRYPOINT ["node"]
+ENTRYPOINT ["node", "npm start"]
 CMD ["server.js"]
 ##----Basenode --
 
-#FROM alpine:latest AS base
-#RUN apk add --no-cache nodejs-current tini
-#RUN mkdir client && cd client 
-#RUN apt-get install npm 
-
-#ENTRYPOINT ["node server.js", "---"]
-#COPY server.js .
-    
+   
 
 # ---- Dependencies ----
 #FROM base AS dependencies
