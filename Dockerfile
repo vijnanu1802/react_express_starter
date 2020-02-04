@@ -12,8 +12,8 @@ RUN apk add --no-cache nodejs npm
 #RUN cp -R client/ ./
 #RUN cp -R package.json ./
 #RUN cp -R server.js ./
-#RUN npm install
-#RUN npm run client-install
+RUN npm install
+RUN npm run client-install
 RUN pwd
 RUN ls -ltr ./
 #RUN ls -ltr /var/lib/jenkins/workspace/docker-node
