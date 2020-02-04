@@ -21,7 +21,7 @@ RUN ls -ltr ./
 #RUN cp package.json $WORKDIR/
 COPY package.json ./
 COPY server.js ./
-COPY client ./
+COPY client/ ./
 RUN ls -ltra
 RUN npm run dev
 RUN npm run server
