@@ -18,12 +18,12 @@ RUN ls -ltr ./
 #RUN ls -ltr /var/lib/jenkins/workspace/docker-node
 #RUN echo $WORKDIR
 #RUN cp package.json $WORKDIR/
-COPY package.json ./
+COPY client/package.json ./
 COPY server.js ./
 #COPY client/ ./
 RUN ls -ltra
 RUN mkdir client
-COPY package.json ./client/
+COPY client/package.json ./client/
 COPY server.js ./client/
 #RUN rm -rf node_modules 
 #RUN npm cache clear --force
