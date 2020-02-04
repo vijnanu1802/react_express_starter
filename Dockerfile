@@ -28,7 +28,7 @@ COPY server.js ./client/
 #RUN rm -rf node_modules 
 #RUN npm cache clear --force
 RUN npm install
-RUN npm run client-install debug
+RUN npm run client-install
 RUN npm run dev
 
 RUN npm run server
