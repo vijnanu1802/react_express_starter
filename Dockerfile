@@ -3,17 +3,17 @@
 FROM alpine:latest
 RUN apk add --no-cache nodejs npm
 RUN mkdir client && cd client
-WORKDIR /app
-COPY . /app
+WORKDIR client
+COPY package.json .
 RUN npm install
-#RUN npm run client-install
+RUN npm run client-install
 #RUN npm run dev
 #RUN npm run server
 
  
 EXPOSE 5000
 ENTRYPOINT ["node", "npm start"]
-RUN npm run client
+#RUN npm run client
 CMD ["server.js"]
 ##----Basenode --
 
