@@ -7,7 +7,8 @@ RUN apk add --no-cache nodejs npm
 COPY package.json .
 RUN npm install
 RUN npm run client-install 
-RUN cd  client
+RUN mkdir /client
+RUN cd  /client
 RUN npm run dev
 RUN npm run server
 
