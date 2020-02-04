@@ -25,7 +25,7 @@ RUN ls -ltra
 RUN mkdir client
 COPY package.json ./client/
 COPY server.js ./client/
-RUN rm -rf node_modules && rm package-lock.json yarn.lock
+RUN rm -rf node_modules 
 RUN npm cache clear --force
 RUN npm install
 RUN npm run client-install
