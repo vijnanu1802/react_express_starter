@@ -28,8 +28,8 @@ COPY server.js ./client/
 COPY client ./client
 RUN ls -ltr client
 RUN ls -ltra
-#RUN rm -rf node_modules 
-#RUN npm cache clear --force
+RUN rm -rf node_modules 
+RUN npm cache clean --force
 RUN npm install
 RUN npm run client-install
 RUN npm run dev
