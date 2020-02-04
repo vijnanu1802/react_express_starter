@@ -10,11 +10,17 @@
 #CMD ["server.js"]
 ##----Basenode --
 
-FROM alpine:latest AS base
-RUN apk add --no-cache nodejs-current tini
-WORKDIR /root/chat
-#ENTRYPOINT ["/sbin/tini", "---"]
-COPY package.json .
+#FROM alpine:latest AS base
+FROM reactexpress:1.0.0 AS base
+#RUN apk add --no-cache nodejs-current tini
+RUN mkdir client && cd client 
+RUN npm install
+
+#ENTRYPOINT ["node server.js", "---"]
+COPY ["start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"" ]
 
 
 # ---- Dependencies ----
@@ -22,7 +28,9 @@ FROM base AS dependencies
 # install node packages
 #RUN npm set progress=false && npm config set depth 0
 WORKDIR /client
-RUN npm install --only=client
+RUN [concurrently: 4.1.1,
+    express: 4.17.1,
+    nodemon: 1.19.1
 # copy production node_modules aside
 #RUN cp -R node_modules prod_node_modules
 # install ALL node_modules, including 'devDependencies'
@@ -33,17 +41,17 @@ RUN npm install --only=client
 #
 # ---- Test ----
 # run linters, setup and tests
-FROM dependencies AS test
-COPY . .
-RUN  npm run lint && npm run setup && npm run test
+#FROM dependencies AS test
+#COPY . .
+#RUN  npm run lint && npm run setup && npm run test
  
 #
 # ---- Release ----
-FROM base AS release
+#FROM base AS release
 # copy production node_modules
-COPY --from=dependencies /client/prod_node_modules ./node_modules
+#COPY --from=dependencies /client/prod_node_modules ./node_modules
 # copy app sources
-COPY . .
+#COPY . .
 # expose port and define CMD
-EXPOSE 5000
-CMD npm run start
+#EXPOSE 5000
+#CMD npm run start
