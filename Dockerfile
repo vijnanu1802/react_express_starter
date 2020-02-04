@@ -2,11 +2,12 @@
 #---Base Node---
 FROM alpine:latest
 RUN apk add --no-cache nodejs npm
-RUN mkdir /client
-RUN cd /client
+#RUN mkdir /client
+#RUN cd /client
 
-COPY package.json /client/
-COPY * /client/
+#COPY package.json /client/
+#COPY * /client/
+COPY package.json ./
 RUN npm install
 RUN npm run client-install 
 
