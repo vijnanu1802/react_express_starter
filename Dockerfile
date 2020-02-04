@@ -13,7 +13,7 @@
 FROM alpine:latest AS base
 RUN apk add --no-cache nodejs-current tini
 RUN mkdir client && cd client 
-RUN sudo apt-get install npm 
+RUN apt-get install npm 
 
 #ENTRYPOINT ["node server.js", "---"]
 COPY server.js .
