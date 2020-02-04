@@ -22,6 +22,8 @@ COPY package.json ./
 COPY server.js ./
 #COPY client/ ./
 RUN ls -ltra
+RUN mkdir client
+
 RUN npm install
 RUN npm run client-install
 RUN npm run dev
