@@ -2,8 +2,8 @@
 #---Base Node---
 FROM alpine:latest
 RUN apk add --no-cache nodejs npm
-#RUN mkdir /client
-#RUN cd /client
+RUN mkdir /home/vijnan
+WORKDIR /home/vijnan
 
 #COPY package.json /client/
 #COPY * /client/
@@ -16,7 +16,7 @@ RUN apk add --no-cache nodejs npm
 #RUN npm run client-install
 RUN pwd
 RUN ls -ltr ./
-RUN ls -ltr /var/lib/jenkins/workspace/docker-node
+#RUN ls -ltr /var/lib/jenkins/workspace/docker-node
 RUN cp package.json ./
 RUN npm run dev
 RUN npm run server
