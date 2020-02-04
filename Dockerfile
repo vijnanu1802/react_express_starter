@@ -5,7 +5,11 @@ RUN apk add --no-cache nodejs npm
 RUN mkdir client && cd client
 WORKDIR /app
 COPY . /app
-RUN npm install 
+RUN npm install
+RUN npm run client-install
+RUN npm run dev
+RUN npm run server
+RUN npm run client
  
 EXPOSE 5000
 ENTRYPOINT ["node", "npm start"]
