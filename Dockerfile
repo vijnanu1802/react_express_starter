@@ -25,7 +25,7 @@ RUN ls -ltra
 RUN mkdir client
 COPY client/package.json ./client/
 COPY server.js ./client/
-COPY pulic/ ./client/
+COPY client/public ./client/
 #RUN rm -rf node_modules 
 #RUN npm cache clear --force
 RUN npm install
