@@ -6,7 +6,7 @@ RUN mkdir client && cd client
 WORKDIR /app
 COPY . /app
 RUN npm install 
-RUN nodejs install
+ 
 EXPOSE 5000
 ENTRYPOINT ["node"]
 CMD ["server.js"]
