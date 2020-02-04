@@ -16,7 +16,7 @@ RUN mkdir client && cd client
 RUN npm install
 
 #ENTRYPOINT ["node server.js", "---"]
-COPY server.js
+COPY server.js .
     
 
 # ---- Dependencies ----
