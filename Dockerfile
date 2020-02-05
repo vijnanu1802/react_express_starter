@@ -14,8 +14,8 @@ RUN npm cache clear --force
 RUN npm install -g npm@next
 #RUN chmod -R 777 ./node_modules
 RUN ls -ltra
-#RUN npm run client-install
-RUN npm run dev
+RUN npm run client-install debug
+#RUN npm run dev
 
 #RUN npm run server
 ### nenu rasthuna###
@@ -23,14 +23,14 @@ RUN npm run dev
 #COPY package*.json ./
 #COPY server*.js ./
 
-RUN npm install  express --save
+#RUN npm install  express --save
 #RUN chmod -R 777 *
 #COPY . .
-RUN npm --verbose install
+#RUN npm --verbose install
 #RUN npm run build
-RUN npm --verbose run client-install
+#RUN npm --verbose run client-install
 #RUN chmod -R 777 *
-RUN npm run dev
+#RUN npm run dev
 EXPOSE 5000
 ENTRYPOINT ["node", "npm start"]
 #RUN npm run client
