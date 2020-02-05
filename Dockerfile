@@ -21,14 +21,14 @@ RUN npm run dev
 #COPY server*.js ./
 
 RUN npm install  express --save
-RUN chmod -R 777 *
-COPY . .
+#RUN chmod -R 777 *
+#COPY . .
 RUN npm --verbose install
 #RUN npm run build
 RUN npm --verbose run client-install
-RUN chmod -R 777 *
+#RUN chmod -R 777 *
 RUN npm run dev
-EXPOSE 8080
+EXPOSE 5000
 ENTRYPOINT ["node", "npm start"]
 #RUN npm run client
 CMD ["server.js"]
