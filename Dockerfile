@@ -14,7 +14,7 @@ RUN npm cache clear --force
 RUN npm install -g npm@next
 #RUN chmod -R 777 ./node_modules
 RUN ls -ltra
-RUN npm run client-install
+#RUN npm run client-install
 RUN npm run dev
 
 #RUN npm run server
