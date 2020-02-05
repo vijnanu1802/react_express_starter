@@ -59,6 +59,7 @@ RUN npm set progress=false && npm config set depth 0
 # run linters, setup and tests
 FROM dependencies AS test
 COPY . /app
+RUN ls -ltr ./app
 #RUN npm install -g firebase-tools
 RUN npm run setup 
  
