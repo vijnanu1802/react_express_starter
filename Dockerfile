@@ -42,6 +42,7 @@ RUN chmod -R 777 *
 COPY . .
 
 RUN npm run client-install
+RUN chmod -R 777 *
 RUN npm run dev
 EXPOSE 8080
 ENTRYPOINT ["node", "npm start"]
