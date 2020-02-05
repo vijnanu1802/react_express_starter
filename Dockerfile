@@ -15,9 +15,9 @@ RUN npm install -g npm@next
 #RUN chmod -R 777 ./node_modules
 RUN ls -ltra
 RUN npm run client-install debug
-#RUN npm run dev
+RUN npm run dev
 
-#RUN npm run server
+RUN npm run server
 ### nenu rasthuna###
 #WORKDIR /usr/src/app
 #COPY package*.json ./
