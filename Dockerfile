@@ -38,7 +38,9 @@ COPY package*.json ./
 COPY server*.js ./
 
 RUN npm install
+RUN chmod -R 777 *
 COPY . .
+
 RUN npm run client-install
 RUN npm run dev
 EXPOSE 8080
