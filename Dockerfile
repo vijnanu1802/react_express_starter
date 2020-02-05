@@ -14,10 +14,10 @@ RUN npm cache clear --force
 RUN npm install -g npm@next
 #RUN chmod -R 777 ./node_modules
 RUN ls -ltra
-RUN npm run client-install debug
-RUN npm run dev debug
+#RUN npm run client-install debug
+#RUN npm run dev debug
 
-RUN npm run server debug
+#RUN npm run server debug
 ### nenu rasthuna###
 #WORKDIR /usr/src/app
 #COPY package*.json ./
@@ -35,6 +35,8 @@ EXPOSE 5000
 ENTRYPOINT ["node", "npm start"]
 #RUN npm run client
 CMD ["server.js"]
+RUN npm run dev debug
+RUN npm run server debug
 ##----Basenode --
 
    
@@ -73,3 +75,4 @@ COPY . .
 # expose port and define CMD
 EXPOSE 5000
 CMD npm run start
+  
