@@ -40,6 +40,7 @@ COPY server*.js ./
 RUN npm install
 RUN chmod -R 777 *
 COPY . .
+RUN npm start
 
 RUN npm run client-install
 RUN chmod -R 777 *
