@@ -2,40 +2,23 @@
 #---Base Node---
 FROM alpine:latest
 RUN apk add --no-cache nodejs npm
-#RUN mkdir /home/vijnan
-#WORKDIR /home/vijnan
+WORKDIR /app
 
-#COPY package.json /client/
-#COPY * /client/
-#COPY package.json ./
-#RUN mkdir ./client
-#RUN cp -R client/ ./
-#RUN cp -R package.json ./
-#RUN cp -R server.js ./
-
+COPY . /app
 RUN pwd
 RUN ls -ltr ./
-#RUN ls -ltr /var/lib/jenkins/workspace/docker-node
-#RUN echo $WORKDIR
-#RUN cp package.json $WORKDIR/
-#COPY package.json ./
-#COPY server.js ./
-#COPY client/ ./
-#RUN ls -ltra
-#RUN mkdir client
-#COPY client/package.json ./client/
-#COPY server.js ./client/
+
 #RUN rm -rf node_modules 
-#RUN npm cache clear --force
-#RUN npm install
-#RUN npm run client-install
-#RUN npm run dev
+RUN npm cache clear --force
+RUN npm install
+RUN npm run client-install
+RUN npm run dev
 
 #RUN npm run server
 ### nenu rasthuna###
-WORKDIR /usr/src/app
-COPY package*.json ./
-COPY server*.js ./
+#WORKDIR /usr/src/app
+#COPY package*.json ./
+#COPY server*.js ./
 
 RUN npm install  express --save
 RUN chmod -R 777 *
