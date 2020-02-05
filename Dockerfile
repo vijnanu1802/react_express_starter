@@ -40,18 +40,18 @@ CMD ["server.js"]
    
 
 # ---- Dependencies ----
-#FROM base AS dependencies
+FROM base AS dependencies
 # install node packages
-#RUN npm set progress=false && npm config set depth 0
+RUN npm set progress=false && npm config set depth 0
 #WORKDIR /client
 #RUN [concurrently: 4.1.1,
 #    express: 4.17.1,
  #   nodemon: 1.19.1 ]
 # copy production node_modules aside
-#RUN cp -R node_modules prod_node_modules
+RUN cp -R node_modules prod_node_modules
 # install ALL node_modules, including 'devDependencies'
-#RUN apt-get update && apt-get install -y curl 
-#RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
+RUN apt-get update && apt-get install -y curl 
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
 
  
 #
