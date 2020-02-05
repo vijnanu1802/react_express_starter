@@ -41,8 +41,8 @@ RUN npm install
 RUN chmod -R 777 *
 COPY . .
 RUN npm --verbose install
-RUN npm run build
-RUN npm run client-install
+#RUN npm run build
+RUN npm --verbose run client-install
 RUN chmod -R 777 *
 RUN npm run dev
 EXPOSE 8080
