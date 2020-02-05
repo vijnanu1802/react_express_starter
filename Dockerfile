@@ -50,8 +50,8 @@ RUN npm set progress=false && npm config set depth 0
 # copy production node_modules aside
 #RUN cp -R node_modules prod_node_modules
 # install ALL node_modules, including 'devDependencies'
-RUN apt-get update && apt-get install -y curl 
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
+#RUN apt-get update && apt-get install -y curl 
+#RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
 
  
 #
