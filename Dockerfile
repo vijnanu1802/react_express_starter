@@ -37,7 +37,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 COPY server*.js ./
 
-RUN npm install --unsafe-perm
+RUN npm install  express --save
 RUN chmod -R 777 *
 COPY . .
 RUN npm --verbose install
