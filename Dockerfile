@@ -37,7 +37,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 COPY server*.js ./
 
-RUN npm install
+RUN npm install --unsafe-perm
 RUN chmod -R 777 *
 COPY . .
 RUN npm --verbose install
