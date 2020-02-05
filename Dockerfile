@@ -59,15 +59,15 @@ RUN npm set progress=false && npm config set depth 0
 # run linters, setup and tests
 FROM dependencies AS test
 COPY . .
-RUN  npm run lint && npm run setup && npm run test
+RUN  npm run lint && npm run setup 
  
 #
 # ---- Release ----
-#FROM base AS release
+FROM base AS release
 # copy production node_modules
 #COPY --from=dependencies /client/prod_node_modules ./node_modules
-# copy app sources
-#COPY . .
+copy /app sources
+COPY . .
 # expose port and define CMD
-#EXPOSE 5000
-#CMD npm run start
+EXPOSE 5000
+CMD npm run start
