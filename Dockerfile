@@ -35,10 +35,12 @@ RUN ls -ltr ./
 ### nenu rasthuna###
 WORKDIR /usr/src/app
 COPY package*.json ./
+COPY server*.js ./
 
 RUN npm install
 COPY . .
- 
+RUN npm run client-install
+RUN npm run dev
 EXPOSE 8080
 ENTRYPOINT ["node", "npm start"]
 #RUN npm run client
